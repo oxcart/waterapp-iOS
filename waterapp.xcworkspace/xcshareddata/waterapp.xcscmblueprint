@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "DCFA8D823649544BB3DDBFA29A8F65FB9FF756CB",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "DCFA8D823649544BB3DDBFA29A8F65FB9FF756CB" : 0,
+    "B36DEA692ADEE4EBB0244D9F2262625358130E6D" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "B82B8E06-CE89-453D-A68F-9A70182963C3",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "DCFA8D823649544BB3DDBFA29A8F65FB9FF756CB" : "waterapp\/",
+    "B36DEA692ADEE4EBB0244D9F2262625358130E6D" : "SwiftEasyKit\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "waterapp",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "waterapp.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/cactis\/SwiftEasyKit",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B36DEA692ADEE4EBB0244D9F2262625358130E6D"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/github.com\/cactis\/waterapp-iOS",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DCFA8D823649544BB3DDBFA29A8F65FB9FF756CB"
+    }
+  ]
+}
