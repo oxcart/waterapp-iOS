@@ -7,12 +7,22 @@
 //
 
 import UIKit
+import SwiftEasyKit
 
 class ViewController: UIViewController {
+  
+  var label = UILabel(text: "WaterApp")
 
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+    view.addSubview(label)
+    label.centered().larger()
+  }
+  
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    label.anchorInCenter(width: 200, height: 100)
   }
 
   override func didReceiveMemoryWarning() {
