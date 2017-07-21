@@ -14,7 +14,10 @@ class AppDelegate: DefaultAppDelegate {
 
   override func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     _ = Configure()
-    window = bootFrom(HomeViewController())
+    let nv = UINavigationController()
+//    nv.pushViewController(CategoriesViewController(url: K.Api.Resource.categories))
+    nv.pushViewController(CategoriesViewController(url: K.Api.Resource.categories), animated: true)
+    window = bootFrom(nv)
     return true
   }
 
