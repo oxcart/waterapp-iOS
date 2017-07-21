@@ -45,7 +45,7 @@ class CategoriesViewController: Scrollable2ViewController {
     }
     override func styleUI() {
       super.styleUI()
-      button.colored(UIColor.blackColor()).larger().bordered().radiused().backgroundColored(UIColor.whiteColor().lighter())
+      button.colored(UIColor.blackColor()).bordered(1, color: UIColor.lightGrayColor().CGColor).radiused(1).backgroundColored(UIColor.whiteColor().lighter())
     }
     
     override func bindUI() {
@@ -78,12 +78,19 @@ class CategoriesViewController: Scrollable2ViewController {
       styleUI()
       bindUI()
       viewDidLayoutSubviews()
+      if collectionData.first?.family?.count > 1 {
+        let name = collectionData.first?.breadcrumb
+        titled(name!, token: "HOME")
+      } else {
+        titled("WaterApp", token: "HOME")
+      }
     }
   }
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    titled("Welcome", token: "HOME")
+    
+    
     
   }
   
@@ -94,11 +101,11 @@ class CategoriesViewController: Scrollable2ViewController {
   
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
-    let padding = 10.cgFloat
+    let padding = 5.cgFloat
     let h = 50.cgFloat
-    let xPad = screenWidth() / 6
-    let count = buttons.count.cgFloat
-    let yPad = (screenHeight() - (count * h) - count * padding) / 3
+    let xPad: CGFloat = padding
+    //    let count = buttons.count.cgFloat
+    let yPad: CGFloat = padding//(screenHeight() - (count * h) - count * padding) / 3
     verticalLayout(buttons, heights: buttons.map({_ in return h}), padding: padding, xPad: xPad, yPad: yPad, alignUnder: nil)
     if buttons.count > 0 { contentView.setLastSubiewAs(buttons.last!) }
   }
