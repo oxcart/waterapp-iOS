@@ -35,7 +35,9 @@ class Configure {
 extension K {
   struct Api {
     struct Resource {
+      static var tasks = "/tasks"
       static var categories = "/categories"
+      
     }
     
   }

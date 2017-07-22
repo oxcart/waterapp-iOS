@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		31340A7C8AC4DB67C8D14145 /* Pods_waterapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E208A9295261B329C07EDE /* Pods_waterapp.framework */; };
+		373908DF1F230C7A000018E3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373908DE1F230C7A000018E3 /* HomeViewController.swift */; };
 		374405451F20F89C000F600F /* Configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374405441F20F89C000F600F /* Configure.swift */; };
 		378A26CA1F20956E003F6E45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378A26C91F20956E003F6E45 /* AppDelegate.swift */; };
 		378A26CC1F20956E003F6E45 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378A26CB1F20956E003F6E45 /* CategoriesViewController.swift */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		061B1E73AA207D489C29295D /* Pods-waterappUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-waterappUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-waterappUITests/Pods-waterappUITests.release.xcconfig"; sourceTree = "<group>"; };
 		10E208A9295261B329C07EDE /* Pods_waterapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_waterapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		373908DE1F230C7A000018E3 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		374405441F20F89C000F600F /* Configure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configure.swift; sourceTree = "<group>"; };
 		378A26C61F20956E003F6E45 /* waterapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = waterapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		378A26C91F20956E003F6E45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			children = (
 				378A26C91F20956E003F6E45 /* AppDelegate.swift */,
 				374405441F20F89C000F600F /* Configure.swift */,
+				373908DE1F230C7A000018E3 /* HomeViewController.swift */,
 				378A26CB1F20956E003F6E45 /* CategoriesViewController.swift */,
 				378A26D01F20956E003F6E45 /* Assets.xcassets */,
 				378A26D21F20956E003F6E45 /* LaunchScreen.storyboard */,
@@ -445,6 +448,7 @@
 				378A26CC1F20956E003F6E45 /* CategoriesViewController.swift in Sources */,
 				378A26CA1F20956E003F6E45 /* AppDelegate.swift in Sources */,
 				374405451F20F89C000F600F /* Configure.swift in Sources */,
+				373908DF1F230C7A000018E3 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,30 +12,36 @@ import ObjectMapper
 
 class CategoriesViewController: Scrollable2ViewController {
   
-  init(url: String!) {
-    super.init(nibName: nil, bundle: nil)
-    ({ self.url = url })()
-  }
-  
-  required init?(coder aDecoder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
-  }
+  var task: Task! { didSet {
+    
+    }}
   
   var url: String! { didSet {
     SelectOption.list (url) { (items) in
       self.collectionData = items
     }
-    }}
+    }
+    
+  }
+  
+  init(task: Task!, url: String!) {
+    super.init(nibName: nil, bundle: nil)
+    ({ self.task = task })()
+    ({ self.url = url })()
+  }
+  
   
   class CategoryButton: DefaultView {
+    var task: Task!
     var button = UIButton()
     var data: SelectOption! { didSet {
       button.text(data.name)
       }
     }
     
-    init(data: SelectOption!) {
+    init(task: Task, data: SelectOption!) {
       super.init(frame: CGRectZero)
+      ({ self.task = task })()
       ({ self.data = data })()
     }
     
@@ -52,7 +58,7 @@ class CategoriesViewController: Scrollable2ViewController {
       super.bindUI()
       button.whenTapped {
         if let url = self.data.children_url {
-          let vc = CategoriesViewController(url: url)
+          let vc = CategoriesViewController(task: self.task, url: url)
           self.pushViewController(vc)
         } else {
           prompt("沒有子目錄")
@@ -72,7 +78,7 @@ class CategoriesViewController: Scrollable2ViewController {
   var collectionData = [SelectOption]() {
     didSet {
       collectionData.forEach({ (item) in
-        self.buttons.append(CategoryButton(data: item))
+        self.buttons.append(CategoryButton(task: task, data: item))
       })
       layoutUI()
       styleUI()
@@ -110,6 +116,7 @@ class CategoriesViewController: Scrollable2ViewController {
     if buttons.count > 0 { contentView.setLastSubiewAs(buttons.last!) }
   }
   
+  required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 }
 
 
