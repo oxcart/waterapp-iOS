@@ -10,14 +10,55 @@ import UIKit
 import SwiftEasyKit
 import ObjectMapper
 
+class Inspection: Mappable {
+  var id: Int?
+  var taskId: Int?
+  var categoryId: Int?
+  var value: Float?
+  
+  func mapping(map: Map) {
+    id <- map["id"]
+    taskId <- map["task_id"]
+    categoryId <- map["category_id"]
+    value <- map["value"]
+  }
+  
+  required init?(_ map: Map) { }
+}
+
+class Category: SelectOption {
+  
+  var formNode: Bool?
+  override func mapping(map: Map) {
+    super.mapping(map)
+    formNode <- map["form_node"]
+  }
+  
+  class func list(url: String!, onComplete: (categories: [Category]) -> ()) {
+    API.get(url) { (response) in
+      switch response.result {
+      case .Success(let value):
+        var items = [Category]()
+        if let jsons = value as? [[String: AnyObject]] {
+          jsons.forEach({ json in
+            let item = Category(JSON: json)!
+            items.append(item)
+          })
+          onComplete(categories: items)
+        }
+      case .Failure(let error):
+        _logForUIMode(error.localizedDescription)
+      }
+    }
+  }
+}
+
 class CategoriesViewController: Scrollable2ViewController {
   
-  var task: Task! { didSet {
-    
-    }}
+  var task: Task! { didSet { }}
   
   var url: String! { didSet {
-    SelectOption.list (url) { (items) in
+    Category.list (url) { (items) in
       self.collectionData = items
     }
     }
@@ -32,14 +73,16 @@ class CategoriesViewController: Scrollable2ViewController {
   
   
   class CategoryButton: DefaultView {
+    
     var task: Task!
     var button = UIButton()
-    var data: SelectOption! { didSet {
+    
+    var data: Category! { didSet {
       button.text(data.name)
       }
     }
     
-    init(task: Task, data: SelectOption!) {
+    init(task: Task, data: Category!) {
       super.init(frame: CGRectZero)
       ({ self.task = task })()
       ({ self.data = data })()
@@ -58,11 +101,16 @@ class CategoriesViewController: Scrollable2ViewController {
       super.bindUI()
       button.whenTapped {
         if let url = self.data.children_url {
-          let vc = CategoriesViewController(task: self.task, url: url)
-          self.pushViewController(vc)
+          if self.data.formNode == true {
+            self.pushViewController(CategoryFormViewController(task: self.task, url: url))
+          } else {
+            let vc = CategoriesViewController(task: self.task, url: url)
+            self.pushViewController(vc)
+          }
         } else {
           prompt("沒有子目錄")
         }
+        
       }
     }
     
@@ -75,7 +123,7 @@ class CategoriesViewController: Scrollable2ViewController {
   
   var buttons = [CategoryButton]()
   
-  var collectionData = [SelectOption]() {
+  var collectionData = [Category]() {
     didSet {
       collectionData.forEach({ (item) in
         self.buttons.append(CategoryButton(task: task, data: item))

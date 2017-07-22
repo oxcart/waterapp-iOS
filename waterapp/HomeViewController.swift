@@ -37,7 +37,6 @@ class HomeViewController: DefaultViewController {
         _logForUIMode(item.toJSON())
         self.pushViewController(CategoriesViewController(task: item, url: K.Api.Resource.categories))
       })
-      
     }
   }
   
