@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -17,28 +17,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Water APP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MrQ-X6-L4a">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="巡檢高手" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MrQ-X6-L4a">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="139" y="189" width="82" height="21"/>
+                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="139" y="184" width="122.5" height="32"/>
                                 </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.47688556158188478" green="0.82909885989784804" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="MrQ-X6-L4a" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Raj-4D-K8K"/>
-                            <constraint firstItem="MrQ-X6-L4a" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="bai-uJ-Yri"/>
+                            <constraint firstItem="MrQ-X6-L4a" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="70r-x3-llr"/>
+                            <constraint firstItem="MrQ-X6-L4a" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="cyT-yF-O8S"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="MrQ-X6-L4a"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Raj-4D-K8K"/>
-                                <exclude reference="bai-uJ-Yri"/>
+                                <exclude reference="70r-x3-llr"/>
+                                <exclude reference="cyT-yF-O8S"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=compact">
@@ -46,8 +46,8 @@
                                 <include reference="MrQ-X6-L4a"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Raj-4D-K8K"/>
-                                <include reference="bai-uJ-Yri"/>
+                                <include reference="70r-x3-llr"/>
+                                <include reference="cyT-yF-O8S"/>
                             </mask>
                         </variation>
                     </view>

@@ -17,6 +17,7 @@
 		378A26D41F20956E003F6E45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 378A26D21F20956E003F6E45 /* LaunchScreen.storyboard */; };
 		378A26DF1F20956E003F6E45 /* waterappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378A26DE1F20956E003F6E45 /* waterappTests.swift */; };
 		378A26EA1F20956E003F6E45 /* waterappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378A26E91F20956E003F6E45 /* waterappUITests.swift */; };
+		37DCECD61F24E5170003EB5E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37DCECD51F24E5170003EB5E /* Launch Screen.storyboard */; };
 		41D083E9587C52473CB463F7 /* Pods_waterappUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2041FA4F3DE69BBDAB0C89D /* Pods_waterappUITests.framework */; };
 		9520B895A75A8727D32DFE1E /* Pods_waterappTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68766998553E8FFB2CB2B28F /* Pods_waterappTests.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +57,7 @@
 		378A26E51F20956E003F6E45 /* waterappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = waterappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		378A26E91F20956E003F6E45 /* waterappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = waterappUITests.swift; sourceTree = "<group>"; };
 		378A26EB1F20956E003F6E45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37DCECD51F24E5170003EB5E /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		3AA257C62D7169B676C591E6 /* Pods-waterapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-waterapp.release.xcconfig"; path = "Pods/Target Support Files/Pods-waterapp/Pods-waterapp.release.xcconfig"; sourceTree = "<group>"; };
 		5ACD55B912B9DD46B51B6296 /* Pods-waterappTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-waterappTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-waterappTests/Pods-waterappTests.release.xcconfig"; sourceTree = "<group>"; };
 		68766998553E8FFB2CB2B28F /* Pods_waterappTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_waterappTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +127,7 @@
 				378A26CB1F20956E003F6E45 /* CategoriesViewController.swift */,
 				378A26D01F20956E003F6E45 /* Assets.xcassets */,
 				378A26D21F20956E003F6E45 /* LaunchScreen.storyboard */,
+				37DCECD51F24E5170003EB5E /* Launch Screen.storyboard */,
 				378A26D51F20956E003F6E45 /* Info.plist */,
 			);
 			path = waterapp;
@@ -284,6 +287,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37DCECD61F24E5170003EB5E /* Launch Screen.storyboard in Resources */,
 				378A26D41F20956E003F6E45 /* LaunchScreen.storyboard in Resources */,
 				378A26D11F20956E003F6E45 /* Assets.xcassets in Resources */,
 			);

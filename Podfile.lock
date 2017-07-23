@@ -45,11 +45,9 @@ PODS:
     - SwiftyJSON (= 2.3.2)
   - SwiftRandom (0.1.7)
   - SwiftyJSON (2.3.2)
-  - XLForm (3.3.0)
 
 DEPENDENCIES:
   - SwiftEasyKit (from `../SwiftEasyKit`)
-  - XLForm
 
 EXTERNAL SOURCES:
   SwiftEasyKit:
@@ -79,8 +77,7 @@ SPEC CHECKSUMS:
   SwiftEasyKit: 41963be0eea277bf823197fa86c4d20e212d2e3f
   SwiftRandom: a03b68cbcda1b03d0fef5a1b87296f9500b6eac3
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
-  XLForm: d5c391dfc62865927b5bcab0a5a0dbfb3e02b0ec
 
-PODFILE CHECKSUM: 78f070ec0ea561eca1d070e8d5829bcd4c06a22e
+PODFILE CHECKSUM: a23a1737f9745b18b6fcd82b5d48efcc0dd899f4
 
 COCOAPODS: 1.2.1

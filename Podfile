@@ -5,7 +5,7 @@ target 'waterapp' do
   use_frameworks!
   
   #  pod 'Eureka', :branch => 'swift2.3'
-  pod 'XLForm'
+  #  pod 'XLForm'
   
   if ['ctslin'].include?(ENV['USER'])
     pod 'SwiftEasyKit', :path => '../SwiftEasyKit'

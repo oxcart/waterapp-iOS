@@ -14,10 +14,12 @@ class Configure {
     K.App.mode = "produciton"
     K.App.mode = "local"
     
-    K.App.name = "Waterapp"
+    K.App.name = "巡檢高手"
     
-    K.Api.production = "http://172.104.79.212/"
-    K.Api.local = "http://waterapp.dev/"
+    K.Api.production = "http://172.104.79.212"
+    K.Api.local = "http://waterapp.dev"
+    
+    K.Color.buttonBg = UIColor.fromRGB(89, green: 188, blue: 254).lighter(0.1)
     
     
     switch K.App.mode {
@@ -37,7 +39,7 @@ extension K {
     struct Resource {
       static var tasks = "/tasks"
       static var categories = "/categories"
-      
+      static var inspections = "/inspections"
     }
     
   }

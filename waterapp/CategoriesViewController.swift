@@ -9,12 +9,14 @@
 import UIKit
 import SwiftEasyKit
 import ObjectMapper
+import Alamofire
 
 class Inspection: Mappable {
+  
   var id: Int?
   var taskId: Int?
   var categoryId: Int?
-  var value: Float?
+  var value: String?
   
   func mapping(map: Map) {
     id <- map["id"]
@@ -29,13 +31,22 @@ class Inspection: Mappable {
 class Category: SelectOption {
   
   var formNode: Bool?
+  var options: String?
+  var unit: String?
+  var value: String?
+  
   override func mapping(map: Map) {
     super.mapping(map)
     formNode <- map["form_node"]
+    options <- map["options"]
+    unit <- map["unit"]
+    value <- map["value"]
   }
   
-  class func list(url: String!, onComplete: (categories: [Category]) -> ()) {
-    API.get(url) { (response) in
+  class func list(url: String!, task: Task? = nil, onComplete: (categories: [Category]) -> ()) {
+    var path = url
+    if task != nil { path = "\(path)?task=\(task!.id!)" }
+    API.get(path) { (response) in
       switch response.result {
       case .Success(let value):
         var items = [Category]()
@@ -71,7 +82,6 @@ class CategoriesViewController: Scrollable2ViewController {
     ({ self.url = url })()
   }
   
-  
   class CategoryButton: DefaultView {
     
     var task: Task!
@@ -94,7 +104,9 @@ class CategoriesViewController: Scrollable2ViewController {
     }
     override func styleUI() {
       super.styleUI()
-      button.colored(UIColor.blackColor()).bordered(1, color: UIColor.lightGrayColor().CGColor).radiused(1).backgroundColored(UIColor.whiteColor().lighter())
+      button.colored(UIColor.blackColor().lighter())
+//      button.bottomBordered()
+      button.radiused(1).backgroundColored(UIColor.whiteColor().lighter())
     }
     
     override func bindUI() {
@@ -136,16 +148,9 @@ class CategoriesViewController: Scrollable2ViewController {
         let name = collectionData.first?.breadcrumb
         titled(name!, token: "HOME")
       } else {
-        titled("WaterApp", token: "HOME")
+        titled(task.title!, token: "HOME")
       }
     }
-  }
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
-    
-    
   }
   
   override func layoutUI() {
@@ -153,13 +158,18 @@ class CategoriesViewController: Scrollable2ViewController {
     contentView.layout(buttons)
   }
   
+  override func styleUI() {
+    super.styleUI()
+    contentView.backgroundColored(K.Color.table)
+  }
+  
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
-    let padding = 5.cgFloat
+    let padding = 1.cgFloat
     let h = 50.cgFloat
-    let xPad: CGFloat = padding
+    let xPad: CGFloat = 0
     //    let count = buttons.count.cgFloat
-    let yPad: CGFloat = padding//(screenHeight() - (count * h) - count * padding) / 3
+    let yPad: CGFloat = 0//padding//(screenHeight() - (count * h) - count * padding) / 3
     verticalLayout(buttons, heights: buttons.map({_ in return h}), padding: padding, xPad: xPad, yPad: yPad, alignUnder: nil)
     if buttons.count > 0 { contentView.setLastSubiewAs(buttons.last!) }
   }
