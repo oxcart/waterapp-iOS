@@ -77,7 +77,7 @@ class HomeViewController: TableViewController {
     let p = 20.cgFloat
     tableView.fillSuperview(left: 0, right: 0, top: 0, bottom: h + 2 * p)
     button.anchorToEdge(.Bottom, padding: p, width: 3 * h, height: h)
-    }
+  }
   
   class TaskCell: TableViewCell {
     
@@ -115,6 +115,7 @@ class Task: Mappable {
   
   class func list(onComplete: (items: [Task]) -> ()) {
     let url = K.Api.Resource.tasks
+    print(url)
     API.get(url) { (response) in
       var items = [Task]()
       switch response.result {

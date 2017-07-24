@@ -14,6 +14,8 @@ class AppDelegate: DefaultAppDelegate {
 
   override func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     _ = Configure()
+    print(K.App.mode)
+    print(K.Api.host)
     let nv = UINavigationController(rootViewController: HomeViewController())
     window = bootFrom(nv)
     return true
