@@ -13,14 +13,13 @@ class Configure {
   init() {
     K.App.mode = "production"
     Development.setDeviceAsSimulator = true
-//    K.App.mode = "local"
-    
+    K.App.mode = "local"    
     
     K.App.name = "巡檢高手"
     
     K.Api.production = "http://172.104.79.212"
     K.Api.local = "http://waterapp.dev"
-    K.Api.local = "http://172.104.79.212"
+    //    K.Api.local = "http://172.104.79.212"
     
     K.Color.buttonBg = UIColor.fromRGB(89, green: 188, blue: 254).lighter(0.1)
     

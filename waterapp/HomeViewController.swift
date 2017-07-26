@@ -13,18 +13,19 @@ import ObjectMapper
 
 class HomeViewController: TableViewController {
   
+  let refresh = UIRefreshControl()
+  
   var button = UIButton(text: "開始新的巡檢")
   var collectionData = [Task]() { didSet { tableView.reloadData() } }
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    tableView.layout([refresh])
   }
-  override func viewDidAppear(animated: Bool) {
-    super.viewDidAppear(animated)
-    Task.list { (items) in
-      self.collectionData = items
-    }
+  
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+    refreshData()
   }
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -50,6 +51,27 @@ class HomeViewController: TableViewController {
     return 50
   }
   
+  func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+    let deleteAction = UITableViewRowAction(style: .Default, title: "刪除") { (action, indexPath) in
+      let index = indexPath.row
+      self.collectionData[index].delete({ (success) in
+        delayedJob({ 
+          tableView.beginUpdates()
+          self.collectionData.removeAtIndex(index)
+          self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+          tableView.endUpdates()
+        })
+        
+      })
+    }
+    return [deleteAction]
+  }
+  
+  
+  func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    return true
+  }
+  
   override func layoutUI() {
     super.layoutUI()
     tableView = tableView(TaskCell.self, identifier: CellIdentifier)
@@ -68,6 +90,14 @@ class HomeViewController: TableViewController {
       Task.new({ (item) in
         self.pushViewController(CategoriesViewController(task: item, url: K.Api.Resource.categories))
       })
+    }
+    refresh.addTarget(self, action: #selector(refreshData), forControlEvents: .ValueChanged)
+  }
+  
+  func refreshData() {
+    Task.list { (items) in
+      self.collectionData = items
+      self.refresh.endRefreshing()
     }
   }
   
@@ -111,6 +141,12 @@ class Task: Mappable {
   func mapping(map: Map) {
     id <- map["id"]
     title <- map["title"]
+  }
+  
+  func delete(onComplete: (success: Bool) -> ()) {
+    API.delete(K.Api.Resource.tasks + "/\(id!)") { (response) in
+      onComplete(success: true)
+    }
   }
   
   class func list(onComplete: (items: [Task]) -> ()) {
