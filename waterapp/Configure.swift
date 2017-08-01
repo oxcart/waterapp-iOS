@@ -16,7 +16,7 @@ class Configure {
       K.App.mode = "local"
     } else {
       K.App.mode = "production"
-      Development.setDeviceAsSimulator = true
+      Development.setDeviceAsSimulator = false
     }
     
     
