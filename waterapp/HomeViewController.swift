@@ -21,6 +21,12 @@ class HomeViewController: TableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     tableView.layout([refresh])
+    addLeftBarButtonItem(getIcon(.Dashboard, options: ["color": K.Color.buttonBg.darker()]), action: #selector(infoTapped))
+    infoTapped()
+  }
+  
+  func infoTapped() {
+    openViewController(InfoViewController())
   }
   
   override func viewWillAppear(animated: Bool) {
