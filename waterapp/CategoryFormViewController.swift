@@ -119,8 +119,11 @@ class CategoryFormViewController: TableViewController {
           self.delegate?.dismissViewControllerAnimated(true, completion: { })
         })
         vc.addAction(cancel)
+        if let presenter = vc.popoverPresentationController {
+          presenter.sourceView = textField
+          presenter.sourceRect = textField.bounds
+        }
         delegate!.presentViewController(vc, animated: true, completion: {
-          
         })
         return false
       }

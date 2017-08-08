@@ -33,7 +33,7 @@ class InfoViewController: DefaultViewController{
   
   override func styleUI() {
     super.styleUI()
-    label.styled().larger(3)
+    label.styled().larger(2)
     v.backgroundColored(UIColor.lightGrayColor().lighter(0.25))
     browser.loadRequest(NSURLRequest(URL: NSURL(string: "http://www.jsene.com/Fooyin/IAQ/")!))
   }

@@ -22,7 +22,6 @@ class HomeViewController: TableViewController {
     super.viewDidLoad()
     tableView.layout([refresh])
     addLeftBarButtonItem(getIcon(.Dashboard, options: ["color": K.Color.buttonBg.darker()]), action: #selector(infoTapped))
-    infoTapped()
   }
   
   func infoTapped() {
