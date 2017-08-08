@@ -17,7 +17,7 @@ class InfoViewController: DefaultViewController{
   var browser = UIWebView()
   
   var data: Setting! { didSet {
-    
+    fanSwitch.on = data.fanStatus!
     }}
   
   override func viewDidLoad() {
